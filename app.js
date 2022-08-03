@@ -11,35 +11,65 @@ function getComputerChoice() {
  */
   switch (randomNumber) {
     case 0:
-      return "Rock";
+      return "rock";
     case 1:
-      return "Paper";
+      return "paper";
     case 2:
     default:
-      return "Scissor";
+      return "scissor";
   }
 }
 
-/* alert(getComputerChoice()); */
 
-function playRound(playerSelection, computerSelection) {
-    if (playerSelection === computerSelection) {
-        return "Its a Tie";
-    }
-    if (computerSelection === "Scissor") {
-        return "You Win! Rock beats Scissor"
-    }
-    else {
-        return "You Loose! Paper beats Scissor"
-    }
+function playRound(playerSelected, computerSelection) {
+  console.log(computerSelection)
+    switch (playerSelected, computerSelection) {
+      case playerSelected == "rock" && computerSelection == "scissors":
+        return "You win!"
+        break;
+      case playerSelected == "paper" && computerSelection == "rock":
+        return "You win!"
+        break;
+      case playerSelected == "scissors" && computerSelection == "paper":
+      return "You Win!"
+      break;
+      case playerSelected == "scissors" && computerSelection == "rock":
+        return "You Loose!"
+        break;
+      case playerSelected == "rock" && computerSelection == "paper":
+        return "You Loose!"
+        break;
+      case playerSelected == "paper" && computerSelection == "scissors":
+      return "You Loose!"
+      break;
+      case playerSelected == "scissors" && computerSelection == "scissors":
+        return "Its a tie"
+        break;
+        case playerSelected == "rock" && computerSelection == "rock":
+          return "Its a tie"
+          break;
+        case playerSelected == "paper" && computerSelection == "paper":
+        return "Its a tie"
+        break;
+        default:
+          return "no cheating";      
+
+     }
 }   
     
 
     
     /* Rock > Scissors, Rock < Paper, */
 
+    function game() {
+      for (let i = 0; i < 5; i++) {
+        let playerSelection = prompt("Choose Paper, Scissors or Rock")
+        let upperPlayerChoice = playerSelection.toUpperCase 
+        let computerChoice = getComputerChoice()
+        let result = playRound(upperPlayerChoice, computerChoice)
+        alert(result)
+      }
+    }
 
-
-const playerSelection = "roCk".toUpperCase();
 const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection))
+
