@@ -16,57 +16,53 @@ function getComputerChoice() {
       return "paper";
     case 2:
     default:
-      return "scissor";
+      return "scissors";
   }
 }
 
 
 function playRound(playerSelected, computerSelection) {
-  console.log(computerSelection)
-    switch (playerSelected, computerSelection) {
+      switch (true) {
       case playerSelected == "rock" && computerSelection == "scissors":
-        return "You win!"
+        return "You win!";
         break;
       case playerSelected == "paper" && computerSelection == "rock":
-        return "You win!"
+        return "You win!";
         break;
       case playerSelected == "scissors" && computerSelection == "paper":
-      return "You Win!"
+      return "You Win!";
       break;
       case playerSelected == "scissors" && computerSelection == "rock":
-        return "You Loose!"
+        return "You Loose!";
         break;
       case playerSelected == "rock" && computerSelection == "paper":
-        return "You Loose!"
+        return "You Loose!";
         break;
       case playerSelected == "paper" && computerSelection == "scissors":
-      return "You Loose!"
+      return "You Loose!";
       break;
       case playerSelected == "scissors" && computerSelection == "scissors":
-        return "Its a tie"
+        return "Its a tie";
         break;
         case playerSelected == "rock" && computerSelection == "rock":
-          return "Its a tie"
+          return "Its a tie";
           break;
         case playerSelected == "paper" && computerSelection == "paper":
-        return "Its a tie"
+        return "Its a tie";
         break;
         default:
           return "no cheating";      
 
      }
 }   
-    
-
-    
-    /* Rock > Scissors, Rock < Paper, */
-
+ 
+   
     function game() {
       for (let i = 0; i < 5; i++) {
         let playerSelection = prompt("Choose Paper, Scissors or Rock")
-        let upperPlayerChoice = playerSelection.toUpperCase 
+        let upPlayerChoice = playerSelection.toLowerCase()
         let computerChoice = getComputerChoice()
-        let result = playRound(upperPlayerChoice, computerChoice)
+        let result = playRound(upPlayerChoice, computerChoice)
         alert(result)
       }
     }
