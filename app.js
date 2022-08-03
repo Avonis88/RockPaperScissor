@@ -2,7 +2,7 @@
 
 function getComputerChoice() {
   const randomNumber = Math.floor(Math.random() * 3);
- /*    if (randomNumber === 0) {
+  /*    if (randomNumber === 0) {
     return "Rock";
   } else if (randomNumber === 1) {
     return "Paper";
@@ -20,52 +20,48 @@ function getComputerChoice() {
   }
 }
 
-
 function playRound(playerSelected, computerSelection) {
-      switch (true) {
-      case playerSelected == "rock" && computerSelection == "scissors":
-        return "You win!";
-        break;
-      case playerSelected == "paper" && computerSelection == "rock":
-        return "You win!";
-        break;
-      case playerSelected == "scissors" && computerSelection == "paper":
-      return "You Win!";
-      break;
-      case playerSelected == "scissors" && computerSelection == "rock":
-        return "You Loose!";
-        break;
-      case playerSelected == "rock" && computerSelection == "paper":
-        return "You Loose!";
-        break;
-      case playerSelected == "paper" && computerSelection == "scissors":
-      return "You Loose!";
-      break;
-      case playerSelected == "scissors" && computerSelection == "scissors":
-        return "Its a tie";
-        break;
-        case playerSelected == "rock" && computerSelection == "rock":
-          return "Its a tie";
-          break;
-        case playerSelected == "paper" && computerSelection == "paper":
-        return "Its a tie";
-        break;
-        default:
-          return "no cheating";      
+  switch (true) {
+    case playerSelected == "rock" && computerSelection == "scissors":
+      return "You win!";
 
-     }
-}   
- 
-   
-    function game() {
-      for (let i = 0; i < 5; i++) {
-        let playerSelection = prompt("Choose Paper, Scissors or Rock")
-        let upPlayerChoice = playerSelection.toLowerCase()
-        let computerChoice = getComputerChoice()
-        let result = playRound(upPlayerChoice, computerChoice)
-        alert(result)
-      }
-    }
+    case playerSelected == "paper" && computerSelection == "rock":
+      return "You win!";
+
+    case playerSelected == "scissors" && computerSelection == "paper":
+      return "You Win!";
+
+    case playerSelected == "scissors" && computerSelection == "rock":
+      return "You Loose!";
+
+    case playerSelected == "rock" && computerSelection == "paper":
+      return "You Loose!";
+
+    case playerSelected == "paper" && computerSelection == "scissors":
+      return "You Loose!";
+
+    case playerSelected == "scissors" && computerSelection == "scissors":
+      return "Its a tie";
+
+    case playerSelected == "rock" && computerSelection == "rock":
+      return "Its a tie";
+
+    case playerSelected == "paper" && computerSelection == "paper":
+      return "Its a tie";
+
+    default:
+      return "no cheating";
+  }
+}
+
+function game() {
+  for (let i = 0; i < 5; i++) {
+    let playerSelection = prompt("Choose Paper, Scissors or Rock");
+    let upPlayerChoice = playerSelection.toLowerCase();
+    let computerChoice = getComputerChoice();
+    let result = playRound(upPlayerChoice, computerChoice);
+    alert(result);
+  }
+}
 
 const computerSelection = getComputerChoice();
-
