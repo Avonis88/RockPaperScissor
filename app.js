@@ -53,15 +53,24 @@ function playRound(playerSelected, computerSelection) {
       return "no cheating";
   }
 }
+const btnrock = document.querySelector("#rock");
+btnrock.addEventListener("click", (e) => {
+  playRound("rock", getComputerChoice());
+  result.textContent = playRound("rock", getComputerChoice());
+});
 
-function game() {
-  for (let i = 0; i < 5; i++) {
-    let playerSelection = prompt("Choose Paper, Scissors or Rock");
-    let upPlayerChoice = playerSelection.toLowerCase();
-    let computerChoice = getComputerChoice();
-    let result = playRound(upPlayerChoice, computerChoice);
-    alert(result);
-  }
-}
+const btnpaper = document.querySelector("#paper");
+btnpaper.addEventListener("click", (e) => {
+  playRound("paper", getComputerChoice());
+  result.textContent = playRound("paper", getComputerChoice());
+});
+
+const btnscissors = document.querySelector("#scissors");
+btnscissors.addEventListener("click", (e) => {
+  playRound("scissors", getComputerChoice());
+  result.textContent = playRound("scissors", getComputerChoice());
+});
+
+const result = document.querySelector("#result");
 
 const computerSelection = getComputerChoice();
