@@ -21,37 +21,36 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelected, computerSelection) {
-  if (playerScore === 5) return "Player Wins!";
-  else if (computerScore === 5)
-  return "Computer Wins!" 
-    switch (true) {
+  if (playerScore === 5) return "You Win!";
+  else if (computerScore === 5) return "You Lose!";
+  switch (true) {
     case playerSelected == "rock" && computerSelection == "scissors":
       playerScore++;
-      return "You win this round!";
+      return "You win this round! Rock beats Scissors!";
 
     case playerSelected == "paper" && computerSelection == "rock":
       playerScore++;
 
-      return "You win this round!";
+      return "You win this round! Paper beats Rock!";
 
     case playerSelected == "scissors" && computerSelection == "paper":
       playerScore++;
 
-      return "You Win this round!";
+      return "You Win this round! Scissors beats Paper!";
 
     case playerSelected == "scissors" && computerSelection == "rock":
       computerScore++;
-      return "You Lose this round!";
+      return "You Lose this round! Rock beats Scissors!";
 
     case playerSelected == "rock" && computerSelection == "paper":
       computerScore++;
 
-      return "You Lose this round!";
+      return "You Lose this round! Paper beats Rock!";
 
     case playerSelected == "paper" && computerSelection == "scissors":
       computerScore++;
 
-      return "You Lose this round!";
+      return "You Lose this round! Scissors beats Paper!";
 
     case playerSelected == "scissors" && computerSelection == "scissors":
       return "Its a tie";
@@ -70,21 +69,21 @@ const btnrock = document.querySelector("#rock");
 btnrock.addEventListener("click", (e) => {
   //playRound("rock", getComputerChoice());
   result.textContent = playRound("rock", getComputerChoice());
-  score.textContent = `${playerScore} - ${computerScore}`;
+  score.textContent = `${"Gamescore"} : ${playerScore} - ${computerScore}`;
 });
 
 const btnpaper = document.querySelector("#paper");
 btnpaper.addEventListener("click", (e) => {
   //playRound("paper", getComputerChoice());
   result.textContent = playRound("paper", getComputerChoice());
-  score.textContent = `${playerScore} - ${computerScore}`;
+  score.textContent = `${"Gamescore"} : ${playerScore} - ${computerScore}`;
 });
 
 const btnscissors = document.querySelector("#scissors");
 btnscissors.addEventListener("click", (e) => {
   //playRound("scissors", getComputerChoice());
   result.textContent = playRound("scissors", getComputerChoice());
-  score.textContent = `${playerScore} - ${computerScore}`;
+  score.textContent = `${"Gamescore"} : ${playerScore} - ${computerScore}`;
 });
 
 const score = document.getElementById("score");
